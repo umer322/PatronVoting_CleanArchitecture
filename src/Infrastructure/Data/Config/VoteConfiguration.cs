@@ -1,4 +1,4 @@
-﻿using Core.Entities;
+﻿using Core.Entities.CharacterAggregate;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
 
@@ -8,7 +8,6 @@ namespace Infrastructure.Data.Config
     {
         public void Configure(EntityTypeBuilder<Vote> builder)
         {
-            builder.HasOne<Character>();
             builder.Property(v => v.Date).IsRequired();
         }
     }

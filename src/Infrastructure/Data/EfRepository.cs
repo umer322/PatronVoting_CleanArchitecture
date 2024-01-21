@@ -1,10 +1,9 @@
 ﻿using Ardalis.Specification.EntityFrameworkCore;
 using Core.Interfaces;
 
-namespace Infrastructure.Data
+namespace Infrastructure.Data;
+
+public class EfRepository<T> : RepositoryBase<T>, IRepository<T>, IReadRepository<T> where T : class, IAggrerateRoot
 {
-    public class EfRepository<T> : RepositoryBase<T>, IRepository<T>, IReadRepository<T> where T : class
-    {
-        public EfRepository(AppDbContext dbContext) : base(dbContext) { }
-    }
+    public EfRepository(AppDbContext dbContext) : base(dbContext) { }
 }

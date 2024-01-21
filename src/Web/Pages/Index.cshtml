@@ -1,0 +1,25 @@
+﻿@page
+@model IndexModel
+@{
+
+    ViewData["Title"] = "Home page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Characters</h1>
+    <div class="container">
+        @if (Model.CharactersModel.Characters.Any())
+        {
+            <div></div>
+        }
+        else
+        {
+            <div>There are no results that match your search</div>    
+        }
+    </div>
+    <div class="pagination">
+        <a class="@Model.CharactersModel!.PagiantionInfo!.Previous">Prev</a>
+        <a>@Model.CharactersModel!.PagiantionInfo!.ActualPage</a>
+        <a class="@Model.CharactersModel!.PagiantionInfo!.Next">Next</a>
+    </div>
+</div>
